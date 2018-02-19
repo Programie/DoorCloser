@@ -2,7 +2,6 @@ package com.selfcoders.doorcloser;
 
 import org.bukkit.Chunk;
 import org.bukkit.block.Block;
-import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
@@ -27,7 +26,6 @@ class EventListener implements Listener {
             return;
         }
 
-        Player player = event.getPlayer();
         Block block = event.getClickedBlock();
         MaterialData blockStateData = block.getState().getData();
 
