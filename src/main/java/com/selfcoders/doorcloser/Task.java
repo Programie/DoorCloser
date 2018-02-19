@@ -1,10 +1,6 @@
 package com.selfcoders.doorcloser;
 
-import org.bukkit.Sound;
 import org.bukkit.block.Block;
-import org.bukkit.block.BlockState;
-import org.bukkit.material.MaterialData;
-import org.bukkit.material.Openable;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -51,23 +47,12 @@ public class Task implements Runnable {
 
             if (door.getTime() <= maxAge) {
                 iterator.remove();
-
-                Block block = door.getDoorBlock();
-
-                BlockState blockState = block.getState();
-                MaterialData materialData = blockState.getData();
-
-                if (!(materialData instanceof Openable)) {
-                    continue;
-                }
-
-                Openable openable = (Openable) materialData;
-
-                openable.setOpen(false);
-                blockState.update();
-
-                block.getWorld().playSound(block.getLocation(), Sound.BLOCK_WOODEN_DOOR_CLOSE, 1, 1);
+                door.close();
             }
         }
+    }
+
+    public List<Door> getDoors() {
+        return doors;
     }
 }

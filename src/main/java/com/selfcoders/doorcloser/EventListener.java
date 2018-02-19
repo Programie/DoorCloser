@@ -1,14 +1,17 @@
 package com.selfcoders.doorcloser;
 
+import org.bukkit.Chunk;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
+import org.bukkit.event.world.ChunkUnloadEvent;
 import org.bukkit.material.MaterialData;
 import org.bukkit.material.Openable;
 
+import java.util.Iterator;
 import java.util.List;
 
 class EventListener implements Listener {
@@ -48,6 +51,21 @@ class EventListener implements Listener {
             // Door is closed and will be opened
 
             plugin.getTask().add(block);
+        }
+    }
+
+    @EventHandler
+    public void onChunkUnloaded(ChunkUnloadEvent event) {
+        Chunk chunk = event.getChunk();
+        Iterator<Door> iterator = plugin.getTask().getDoors().iterator();
+
+        while (iterator.hasNext()) {
+            Door door = iterator.next();
+
+            if (door.getDoorBlock().getChunk() == chunk) {
+                iterator.remove();
+                door.close();
+            }
         }
     }
 }
