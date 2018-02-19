@@ -46,18 +46,18 @@ class EventListener implements Listener {
         if (door.isOpen()) {
             // Door is open and will be closed
 
-            plugin.getTask().remove(block);
+            plugin.getDoorList().remove(block);
         } else {
             // Door is closed and will be opened
 
-            plugin.getTask().add(block);
+            plugin.getDoorList().add(block);
         }
     }
 
     @EventHandler
     public void onChunkUnloaded(ChunkUnloadEvent event) {
         Chunk chunk = event.getChunk();
-        Iterator<Door> iterator = plugin.getTask().getDoors().iterator();
+        Iterator<Door> iterator = plugin.getDoorList().getDoors().iterator();
 
         while (iterator.hasNext()) {
             Door door = iterator.next();

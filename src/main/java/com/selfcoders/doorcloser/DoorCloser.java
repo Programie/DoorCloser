@@ -5,7 +5,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitScheduler;
 
 public class DoorCloser extends JavaPlugin {
-    private final Task task = new Task(this);
+    private final DoorList doorList = new DoorList();
 
     @Override
     public void onEnable() {
@@ -17,10 +17,10 @@ public class DoorCloser extends JavaPlugin {
 
         BukkitScheduler scheduler = getServer().getScheduler();
 
-        scheduler.runTaskTimer(this, task, 0, getConfig().getLong("task-timer-interval"));
+        scheduler.runTaskTimer(this, new Task(this), 0, getConfig().getLong("task-timer-interval"));
     }
 
-    public Task getTask() {
-        return task;
+    public DoorList getDoorList() {
+        return doorList;
     }
 }
