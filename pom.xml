@@ -8,7 +8,7 @@
 
     <name>DoorCloser</name>
     <description>Automatically close doors after they have been opened</description>
-    <url>https://selfcoders.com</url>
+    <url>https://gitlab.com/Programie/DoorCloser</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

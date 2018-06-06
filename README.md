@@ -2,9 +2,7 @@
 
 A Minecraft Bukkit plugin which automatically closes doors opened by players after some time.
 
-[![Build Status](https://travis-ci.org/Programie/DoorCloser.svg?branch=master)](https://travis-ci.org/Programie/DoorCloser)
-[![Issues](https://img.shields.io/github/issues/Programie/DoorCloser.svg)](https://github.com/Programie/DoorCloser/issues)
-[![Release](https://img.shields.io/github/release/Programie/DoorCloser.svg)](https://github.com/Programie/DoorCloser/releases/latest)
+[![pipeline status](https://gitlab.com/Programie/TalkingMobs/badges/master/pipeline.svg)](https://gitlab.com/Programie/TalkingMobs/commits/master)
 
 ## Installation
 
