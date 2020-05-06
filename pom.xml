@@ -15,18 +15,15 @@
     <name>DoorCloser</name>
     <description>Automatically close doors after they have been opened</description>
     <url>https://gitlab.com/Programie/DoorCloser</url>
+
+    <properties>
+        <bukkit-api-version>1.12.2</bukkit-api-version>
+    </properties>
+
     <repositories>
         <repository>
             <id>common-repo</id>
             <url>https://gitlab.com/api/v4/projects/Programie%2FCommon/packages/maven</url>
         </repository>
     </repositories>
-
-    <dependencies>
-        <dependency>
-            <groupId>org.bukkit</groupId>
-            <artifactId>bukkit</artifactId>
-            <version>1.12.2-R0.1-SNAPSHOT</version>
-        </dependency>
-    </dependencies>
 </project>
