@@ -4,11 +4,30 @@ timeout: 60
 # The interval in ticks at which should be checked which doors should be closed
 task-timer-interval: 20
 
-# List of doors which should be automatically closed
+# List of doors which should be automatically closed (Empty list or undefined: all door types including trapdoors and fence gates)
 doors:
 - ACACIA_DOOR
+- ACACIA_FENCE
+- ACACIA_TRAPDOOR
 - BIRCH_DOOR
+- BIRCH_FENCE
+- BIRCH_TRAPDOOR
 - DARK_OAK_DOOR
+- DARK_OAK_FENCE
+- DARK_OAK_TRAPDOOR
 - JUNGLE_DOOR
+- JUNGLE_FENCE
+- JUNGLE_TRAPDOOR
 - SPRUCE_DOOR
-- WOODEN_DOOR
+- SPRUCE_FENCE
+- SPRUCE_TRAPDOOR
+- OAK_DOOR
+- OAK_FENCE
+- OAK_TRAPDOOR
+- CRIMSON_DOOR
+- CRIMSON_FENCE
+- CRIMSON_TRAPDOOR
+- WARPED_DOOR
+- WARPED_FENCE
+- WARPED_TRAPDOOR
+- AIR

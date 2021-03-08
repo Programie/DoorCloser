@@ -3,8 +3,8 @@ package com.selfcoders.doorcloser;
 import org.bukkit.Sound;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockState;
-import org.bukkit.material.MaterialData;
-import org.bukkit.material.Openable;
+import org.bukkit.block.data.BlockData;
+import org.bukkit.block.data.Openable;
 
 class Door {
     private Block doorBlock;
@@ -25,17 +25,20 @@ class Door {
 
     public void close() {
         BlockState blockState = doorBlock.getState();
-        MaterialData materialData = blockState.getData();
+        BlockData blockData = blockState.getBlockData();
 
-        if (!(materialData instanceof Openable)) {
+        if (!(blockData instanceof Openable)) {
             return;
         }
 
-        Openable openable = (Openable) materialData;
+        Openable openable = (Openable) blockData;
 
-        openable.setOpen(false);
-        blockState.update();
+        if (openable.isOpen()) {
+            openable.setOpen(false);
+            blockState.setBlockData(openable);
+            blockState.update();
 
-        doorBlock.getWorld().playSound(doorBlock.getLocation(), Sound.BLOCK_WOODEN_DOOR_CLOSE, 1, 1);
+            doorBlock.getWorld().playSound(doorBlock.getLocation(), Sound.BLOCK_WOODEN_DOOR_CLOSE, 1, 1);
+        }
     }
 }

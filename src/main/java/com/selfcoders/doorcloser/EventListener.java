@@ -2,14 +2,15 @@ package com.selfcoders.doorcloser;
 
 import org.bukkit.Chunk;
 import org.bukkit.block.Block;
+import org.bukkit.block.data.BlockData;
+import org.bukkit.block.data.Openable;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.world.ChunkUnloadEvent;
-import org.bukkit.material.MaterialData;
-import org.bukkit.material.Openable;
 
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 
@@ -27,21 +28,21 @@ class EventListener implements Listener {
         }
 
         Block block = event.getClickedBlock();
-        MaterialData blockStateData = block.getState().getData();
+        BlockData blockData = block.getState().getBlockData();
 
-        if (!(blockStateData instanceof Openable)) {
+        if (!(blockData instanceof Openable)) {
             return;
         }
 
-        Openable door = (Openable) blockStateData;
+        Openable doorBlockData = (Openable) blockData;
 
         List<String> doors = plugin.getConfig().getStringList("doors");
 
-        if (!doors.contains(block.getType().name())) {
+        if (doors.size() > 0 && !doors.contains(block.getType().name())) {
             return;
         }
 
-        if (door.isOpen()) {
+        if (doorBlockData.isOpen()) {
             // Door is open and will be closed
 
             plugin.getDoorList().remove(block);
@@ -55,10 +56,12 @@ class EventListener implements Listener {
     @EventHandler
     public void onChunkUnloaded(ChunkUnloadEvent event) {
         Chunk chunk = event.getChunk();
-        Iterator<Door> iterator = plugin.getDoorList().getDoors().iterator();
+        HashMap<Integer, Door> doorList = plugin.getDoorList().getDoors();
+        Iterator<Integer> iterator = doorList.keySet().iterator();
 
         while (iterator.hasNext()) {
-            Door door = iterator.next();
+            Integer key = iterator.next();
+            Door door = doorList.get(key);
 
             if (door.getDoorBlock().getChunk() == chunk) {
                 iterator.remove();

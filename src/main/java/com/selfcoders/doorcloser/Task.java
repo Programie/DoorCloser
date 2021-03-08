@@ -1,5 +1,6 @@
 package com.selfcoders.doorcloser;
 
+import java.util.HashMap;
 import java.util.Iterator;
 
 public class Task implements Runnable {
@@ -16,14 +17,16 @@ public class Task implements Runnable {
 
         long maxAge = now - timeout;
 
-        Iterator<Door> iterator = plugin.getDoorList().getDoors().iterator();
+        HashMap<Integer, Door> doorList = plugin.getDoorList().getDoors();
+        Iterator<Integer> iterator = doorList.keySet().iterator();
 
         while (iterator.hasNext()) {
-            Door door = iterator.next();
+            Integer key = iterator.next();
+            Door door = doorList.get(key);
 
             if (door.getTime() <= maxAge) {
-                iterator.remove();
                 door.close();
+                iterator.remove();
             }
         }
     }

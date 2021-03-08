@@ -2,33 +2,22 @@ package com.selfcoders.doorcloser;
 
 import org.bukkit.block.Block;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
+import java.util.HashMap;
 
 public class DoorList {
-    private final List<Door> doors = new ArrayList<>();
+    private final HashMap<Integer, Door> doors = new HashMap<>();
 
     public void add(Block doorBlock) {
         Door door = new Door(doorBlock);
 
-        doors.add(door);
+        doors.put(doorBlock.hashCode(), door);
     }
 
     public void remove(Block doorBlock) {
-        Iterator<Door> iterator = doors.iterator();
-
-        while (iterator.hasNext()) {
-            Door door = iterator.next();
-
-            if (door.getDoorBlock() == doorBlock) {
-                iterator.remove();
-                break;
-            }
-        }
+        doors.remove(doorBlock.hashCode());
     }
 
-    public List<Door> getDoors() {
+    public HashMap<Integer, Door> getDoors() {
         return doors;
     }
 }
