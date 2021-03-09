@@ -16,6 +16,11 @@
     <description>Automatically close doors after they have been opened</description>
     <url>https://gitlab.com/Programie/DoorCloser</url>
 
+    <scm>
+        <developerConnection>scm:git:ssh://git@gitlab.com/Programie/DoorCloser.git</developerConnection>
+        <tag>HEAD</tag>
+    </scm>
+
     <properties>
         <bukkit-api-version>1.16.5</bukkit-api-version>
     </properties>
