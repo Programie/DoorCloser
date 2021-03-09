@@ -6,6 +6,9 @@ task-timer-interval: 20
 
 # List of doors which should be automatically closed (Empty list or undefined: all door types including trapdoors and fence gates)
 doors:
+- WOODEN_DOOR
+- WOODEN_FENCE
+- WOODEN_TRAPDOOR
 - ACACIA_DOOR
 - ACACIA_FENCE
 - ACACIA_TRAPDOOR
