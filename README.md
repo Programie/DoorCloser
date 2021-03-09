@@ -7,7 +7,9 @@ A Minecraft Bukkit plugin which automatically closes doors opened by players aft
 
 ## What is it?
 
-DoorCloser automatically closes doors which have been opened by players after a defined timeout (default: 60 seconds).
+Do you hate it when someone walks into your house and keeps the door opened? Then DoorCloser is the right plugin for you!
+
+DoorCloser tracks opened doors and automatically closes them after a configurable time (60 seconds by default).
 
 The plugin also supports defining a list of door types which should be automatically closed. In that way, you might let the plugin only close oak doors while keeping jungle doors open all the time.
 
