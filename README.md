@@ -21,7 +21,7 @@ The plugin doesn't use any commands. Just open any door and it will close it for
 
 ## Installation
 
-You can get the latest release from [GitLab](https://gitlab.com/Programie/DoorCloser/pipelines?scope=tags).
+You can get the latest release from [GitLab](https://gitlab.com/Programie/DoorCloser/-/releases) and [CurseForge](https://www.curseforge.com/minecraft/bukkit-plugins/doorcloser).
 
 ## Build
 
