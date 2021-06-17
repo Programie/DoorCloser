@@ -5,7 +5,8 @@ A Minecraft Bukkit plugin which automatically closes doors opened by players aft
 <img src="logo.png" alt="Logo" height="300"/>
 
 [![pipeline status](https://gitlab.com/Programie/DoorCloser/badges/master/pipeline.svg)](https://gitlab.com/Programie/DoorCloser/commits/master)
-[![download latest release](https://img.shields.io/badge/download-latest-blue.svg)](https://gitlab.com/Programie/DoorCloser/-/jobs/artifacts/master/raw/target/DoorCloser.jar?job=release)
+[![download from GitLab](https://img.shields.io/badge/download-Releases-blue?logo=gitlab)](https://gitlab.com/Programie/DoorCloser/-/releases)
+[![download from CurseForge](https://img.shields.io/badge/download-CurseForge-blue?logo=curseforge)](https://www.curseforge.com/minecraft/bukkit-plugins/doorcloser)
 
 ## What is it?
 
@@ -18,10 +19,6 @@ The plugin also supports defining a list of door types which should be automatic
 ## How to use it?
 
 The plugin doesn't use any commands. Just open any door and it will close it for you after the defined timeout has been elapsed.
-
-## Installation
-
-You can get the latest release from [GitLab](https://gitlab.com/Programie/DoorCloser/-/releases) and [CurseForge](https://www.curseforge.com/minecraft/bukkit-plugins/doorcloser).
 
 ## Build
 
