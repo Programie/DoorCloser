@@ -8,6 +8,7 @@ A Minecraft Bukkit plugin which automatically closes doors opened by players aft
 [![download from GitHub](https://img.shields.io/badge/download-Releases-blue?logo=github)](https://github.com/Programie/DoorCloser/releases/latest)
 [![download from Modrinth](https://img.shields.io/badge/download-Modrinth-blue?logo=modrinth)](https://modrinth.com/plugin/doorcloser)
 [![download from CurseForge](https://img.shields.io/badge/download-CurseForge-blue?logo=curseforge)](https://www.curseforge.com/minecraft/bukkit-plugins/doorcloser)
+[![view on Website](https://img.shields.io/badge/view-Website-blue)](https://selfcoders.com/projects/doorcloser)
 
 ## What is it?
 
