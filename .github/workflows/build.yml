@@ -4,6 +4,7 @@ on: push
 
 permissions:
   contents: write
+  packages: read
 
 jobs:
   build:
